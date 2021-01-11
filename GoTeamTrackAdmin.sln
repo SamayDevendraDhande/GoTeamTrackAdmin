@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GoTeamTrackAdminWeb", "GoTeamTrackAdminWeb\", "{EB5600ED-4F15-40E9-BF9D-59F1724B77AE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52586"
+		Debug.AspNetCompiler.PhysicalPath = "GoTeamTrackAdminWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52586\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52586"
+		Release.AspNetCompiler.PhysicalPath = "GoTeamTrackAdminWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52586\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52586"
+		SlnRelativePath = "GoTeamTrackAdminWeb\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB5600ED-4F15-40E9-BF9D-59F1724B77AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5600ED-4F15-40E9-BF9D-59F1724B77AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {844FF44C-B2ED-442C-93C6-425231BBDA51}
+	EndGlobalSection
+EndGlobal

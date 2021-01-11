@@ -1,0 +1,88 @@
+
+
++ TaskNew.aspx
+	Task (txt) >> mandatory
+	TargetDate (txt)
+	User (ddl)
+
++ TaskListOnGoing.aspx?ucode=user1&status=Pending
+	+ Action: Unallocated, Pending, Completed, Closed
+
++ TaskEdit.aspx
+	CreateDate txt disabled
+	Task (txt) >> mandatory
+	TargetDate (txt)
+	User (ddl)
+	Status (ddl)
+	Remarks txt
+	RemarksDate txt disabled
+	
++ TaskListClosed.aspx?ucode=user1
+
+--------------------------
+2020-12-22
+
+++ Task table >> convert usercode to ucode
+
+- Dashboard
+
++ Closed Task list page >> same as ongoing >> without status filter >> Action >> Pending button
+
++ OnGoingList >> Edit link on task column
+
++ OnGoing List >> title >> On Going Tasks - User Name - Status
+
++ Closed List >> title >> Closed Tasks - User Name
+
+++ Dashboard changes: total numbers link, total title link, closed title link, remove link of name
+
+++ TaskEdit.aspx >> 4 buttons as per action 
+
+++ List page >> Name (code)
+
+--------------------------
+2020-12-23
+
+
+Activity-TaskListOpen >> recycler view / card view >> Task(title), targetdate, remarksdate
+
+--------------------------------------
+Task Task Task Task Task Task Task
+Task Task Task 
+Target: 2020-12-01   Reply: 2020-12-10
+--------------------------------------
+
+Activity-TaskDetail
+
+>> All fields non editable
+>> If status = "Pending" >> Remarks editable >> Buttons : Reply, Completed
+
+Main screen >> add 3 buttons below the switch
+
+Pending Tasks
+Reply Tasks
+Completed Tasks
+Closed Tasks
+
+
+--------------------------------------
+2020-12-25
+
+++ UserTaskPendingReply.aspx >> on login go here
+++ UserTaskCompleted.aspx
+++ UserTaskClosed.aspx
+++ UserTaskDetail.aspx >> like detail of app
+
+
+
+
+
+
+
+
+
+
+
+
+
+

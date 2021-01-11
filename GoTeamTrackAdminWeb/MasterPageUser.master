@@ -1,0 +1,545 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageUser.master.cs"
+    Inherits="MasterPageUser" %>
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8" />
+    <title>Go Team</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/metro.css" rel="stylesheet" />
+    <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/style_responsive.css" rel="stylesheet" />
+    <link href="assets/css/style_default.css" rel="stylesheet" id="style_color" />
+    <link rel="stylesheet" type="text/css" href="assets/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/chosen-bootstrap/chosen/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="assets/jquery-tags-input/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="assets/clockface/css/clockface.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-timepicker/compiled/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" href="assets/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css" />
+    <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="assets/uniform/css/uniform.default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker.css" />
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="assets/jqvmap/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="assets/jquery-ui/jquery-ui-1.10.1.custom.min.css" media="screen" rel="stylesheet"
+        type="text/css" />
+    <style>
+        @media print {
+            #content {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: white;
+                margin: 0; /*padding: 15px;
+                font-size: 14px;
+                line-height: 18px;*/
+                z-index: 1000;
+            }
+
+                #content div.row-fluid {
+                    /*width: 95%;*/
+                }
+
+            .page-sidebar, .header, .footer {
+                display: none;
+            }
+
+            .actionbar {
+                display: none;
+            }
+
+            .hideprint {
+                display: none;
+            }
+
+            .onlyprint {
+                display: inherit !important;
+            }
+        }
+
+        @media (min-width: 980px) {
+            body {
+                overflow-x: scroll !important;
+            }
+        }
+
+        .topspace {
+            display: none !important;
+        }
+
+        .onlyprint {
+            display: none;
+        }
+        /*.portlet-body.scrollx
+        {
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }*/ .dataTables_wrapper {
+            overflow-x: scroll;
+        }
+
+        li.highlight-menu a {
+            background-color: #AA3d3d !important;
+        }
+
+        .portlet-title h3 {
+            display: inline-block;
+            line-height: normal;
+            margin: 0;
+        }
+
+        .table th, .table td {
+            padding: 2px;
+        }
+
+            .table td input[type="text"] {
+            }
+
+        .tbl-link {
+            padding: 0 10px;
+        }
+
+        label.control-label {
+            cursor: default;
+        }
+
+        .table td input[type="text"], .table td select {
+            margin-bottom: 0;
+            padding: 0px 2px !important;
+            height: 20px;
+            min-height: 20px !important;
+        }
+
+        .table td .chzn-single {
+            height: 20px !important;
+            line-height: 20px !important;
+            overflow: hidden;
+        }
+
+        .page-container {
+            background-color: #3d3d3d !important;
+        }
+
+        body {
+            background-color: #FFFFFF !important;
+            font-family: calibri !important;
+        }
+
+        body {
+            font-family: calibri !important;
+        }
+
+        .btn {
+            font-family: calibri !important;
+        }
+
+        input.m-wrap, button.m-wrap, select.m-wrap, textarea.m-wrap {
+            font-family: calibri !important;
+        }
+
+        input, button, select, textarea {
+            font-family: calibri !important;
+        }
+
+        .wrapspanreplaced {
+            border: solid 1px #EEEEEE;
+            padding: 6px;
+            word-wrap: break-word; /*word-break: break-all;*/
+            margin-left: 0 !important;
+            cursor: not-allowed;
+        }
+
+        .txtBase64Temp {
+            display: none !important;
+        }
+
+        .ReqStar {
+            color: #FF0000;
+        }
+
+        .page-sidebar {
+            background-color: #3d3d3d !important;
+        }
+
+        .dataTables_length, .dataTables_paginate {
+            display: none;
+        }
+
+        @media (min-width: 980px) {
+            /*.nav-collapse.collapse
+            {
+                height: 100% !important;
+            }*/ .page-sidebar {
+                position: absolute;
+            }
+        }
+
+        .ss_iframeinmodal {
+            border: none;
+            width: 100%;
+            height: 82vh;
+        }
+
+        .ss_imodal {
+            width: 95vw;
+            height: 90vh;
+            left: 2.5vw;
+            margin-left: 0;
+        }
+
+            .ss_imodal.fade.in {
+                top: 5vh;
+            }
+
+            .ss_imodal .modal-body {
+                max-height: none;
+                padding: 0;
+                height: 83vh;
+            }
+
+        span.m-wrap {
+            border: 1px solid #e5e5e5;
+            display: inline-block;
+            padding: 2px;
+        }
+
+        @media (max-width: 979px) {
+            .header {
+                position: fixed;
+            }
+
+            .fixed-top .page-container {
+                margin-top: 42px !important;
+                position: relative;
+            }
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+    <form id="form1" runat="server">
+        <div class="overlayloading" style="background-color: #DDDDDD; opacity: 0.8; position: fixed; top: 0; left: 0; height: 100%; width: 100%; z-index: 100000;">
+            <div id="Div1" class="progress progress-striped progress-success active">
+                <div style="width: 100%;" class="bar">
+                </div>
+            </div>
+            <%--<div id="Div2" style="position: absolute; left: 35%; top: 20%; width: 30%; height: 40%;
+            background-image: url('images/loader_plane3.gif'); background-size: contain;
+            background-position: center; background-repeat: no-repeat;">
+        </div>--%>
+        </div>
+        <!-- BEGIN HEADER -->
+        <div class="header navbar navbar-inverse navbar-fixed-top">
+            <!-- BEGIN TOP NAVIGATION BAR -->
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <!-- BEGIN LOGO -->
+                    <a href="javascript:window.history.back();" class="btn icn-only black" style="float: left; padding-left: 0; background: transparent;"><i class="icon-chevron-left"></i>
+                    </a><span class="brand" href="#">Go Team | <%= SessionManager.LoggedInUTName %></span>
+                    <!-- END LOGO -->
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                    <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                        <img src="assets/img/menu-toggler.png" alt="" />
+                    </a>
+                    <!-- END RESPONSIVE MENU TOGGLER -->
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                </div>
+            </div>
+            <!-- END TOP NAVIGATION BAR -->
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container row-fluid">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar nav-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                <ul id="ulSidebarMenu">
+                    <li>
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                        <div class="sidebar-toggler hidden-phone">
+                        </div>
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    </li>
+                    <li class=""><a href="UserTaskPendingReply.aspx"><i class=" icon-warning-sign"></i><span class="title">Pending Reply Tasks</span> <span class=""></span></a></li>
+                    <li class=""><a href="UserTaskCompleted.aspx"><i class="icon-ok"></i><span class="title">Completed Tasks</span> <span class=""></span></a></li>
+                    <li class=""><a href="UserTaskClosed.aspx"><i class=" icon-ok"></i><span class="title">Closed Tasks</span> <span class=""></span></a></li>
+                    <li class=""><a href="javascript:;"><i class="icon-user"></i><span class="title">
+                        <%= SessionManager.LoggedInUName + " ("+ SessionManager.LoggedInUCode + ")" %></span> <span class=""></span>
+                    </a></li>
+                    <li class=""><a href="Login.aspx"><i class="icon-key"></i><span class="title">Logout</span> <span class=""></span></a></li>
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN PAGE -->
+            <div class="page-content">
+                <!-- BEGIN PAGE CONTAINER-->
+                <%--<div id="loading" class="progress progress-striped progress-success active">
+                <div style="width: 100%;" class="bar">
+                </div>
+            </div>--%>
+                <div class="container-fluid" style="display: none;">
+                    <!-- BEGIN PAGE HEADER-->
+                    <div class="row-fluid topspace">
+                        <div class="span12">
+                        </div>
+                    </div>
+                    <!-- END PAGE HEADER-->
+                    <!-- BEGIN PAGE CONTENT-->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <!-- END PAGE CONTENT-->
+                </div>
+                <!-- END PAGE CONTAINER-->
+            </div>
+            <!-- END PAGE -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <%--<div class="footer">
+    </div>--%>
+        <%--<div class="footer">
+        <div class="span pull-right">
+            <span class="go-top"><i class="icon-angle-up"></i></span>
+        </div>
+        <div class="span pull-right">
+            Powered By <a target="_blank" href="http://samaysoftware.net">Samay Software</a>
+        </div>
+    </div>--%>
+        <!-- END FOOTER -->
+        <!-- BEGIN JAVASCRIPTS -->
+        <!-- Load javascripts at bottom, this will reduce page load time -->
+
+        <script src="assets/js/jquery-1.8.3.min.js"></script>
+
+        <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+        <script src="assets/breakpoints/breakpoints.js"></script>
+
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+
+        <script src="assets/js/jquery.blockui.js"></script>
+
+        <script src="assets/js/jquery.cookie.js"></script>
+
+        <!--[if lt IE 9]>
+	<script src="assets/js/excanvas.js"></script>
+	<script src="assets/js/respond.js"></script>	
+	<![endif]-->
+
+        <script src="assets/breakpoints/breakpoints.js"></script>
+
+        <script src="assets/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
+
+        <script src="assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+        <script src="assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="assets/js/jquery.blockui.js"></script>
+
+        <script src="assets/js/jquery.cookie.js"></script>
+
+        <script src="assets/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+
+        <script src="assets/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+
+        <script src="assets/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+
+        <script src="assets/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+
+        <script src="assets/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+
+        <script src="assets/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+
+        <script src="assets/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+
+        <script src="assets/flot/jquery.flot.js"></script>
+
+        <script src="assets/flot/jquery.flot.resize.js"></script>
+
+        <script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
+
+        <script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script>
+
+        <script type="text/javascript" src="assets/data-tables/jquery.dataTables.js"></script>
+
+        <script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+
+        <script type="text/javascript" src="assets/js/jquery.pulsate.min.js"></script>
+
+        <!--
+    <script type="text/javascript" src="assets/bootstrap-daterangepicker/date.js"></script>
+
+    <script type="text/javascript" src="assets/bootstrap-daterangepicker/daterangepicker.js"></script>
+    
+    -->
+
+        <script type="text/javascript" src="assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
+
+        <script type="text/javascript" src="assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+
+        <script type="text/javascript" src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+
+        <script type="text/javascript" src="assets/jquery-tags-input/jquery.tagsinput.min.js"></script>
+
+        <script type="text/javascript" src="assets/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+
+        <!--
+    <script type="text/javascript" src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+-->
+
+        <script type="text/javascript" src="assets/clockface/js/clockface.js"></script>
+
+        <script type="text/javascript" src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+        <script type="text/javascript" src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+        <script src="assets/js/app.js"></script>
+
+        <script type="text/javascript">
+
+            var skipLoader = 0;
+
+            function ReplaceTextBoxes() {
+                try {
+                    $('.ReplaceTextBoxes input[type=text]:not(:disabled)').each(function () {
+                        $("<span />", { text: this.value, "class": $(this).attr("class") + " wrapspanreplaced", "style": $(this).attr("style") }).insertAfter(this);
+                        $(this).hide();
+                    });
+
+                    $('.ReplaceTextBoxes textarea:not(:disabled)').each(function () {
+                        $("<span />", { html: this.value.replace(/\r?\n/g, '<br/>'), "class": $(this).attr("class") + " wrapspanreplaced", "style": $(this).attr("style") }).insertAfter(this);
+                        //alert(this.value.indexOf('\n'));
+                        $(this).hide();
+                    });
+
+                    $('.ReplaceTextBoxes .chzn-container.chzn-container-single ').each(function () {
+                        $("<span />", { text: $(this).find("a.chzn-single span").text(), "class": "span9 m-wrap wrapspanreplaced" }).insertAfter(this);
+                        $(this).hide();
+                    });
+
+                    $('.ReplaceTextBoxes select').each(function () {
+                        $(this).attr('disabled', 'disabled');
+                    });
+                } catch (err) { }
+            }
+
+            jQuery(document).ready(function () {
+
+                //App.setPage("index");  // set current page
+                App.init(); // init the rest of plugins and elements
+
+                //$("#loading").fadeOut(800);
+                //$("#loading").hide();
+                $(".overlayloading").hide();
+                $(".container-fluid").fadeIn(800);
+
+                var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+                $("#ulSidebarMenu li").each(function () {
+                    if ($(this).find("a[href='" + page + "']").length > 0) {
+                        $(this).addClass("active");
+                    }
+                });
+
+                $("a.dropdown-toggle").click(function () {
+                    $(this).parent().toggleClass('open');
+                });
+
+                $('.ReplaceTextBoxes input[type=text][disabled]').each(function () {
+                    $("<span />", { text: this.value, "class": $(this).attr("class") + " wrapspanreplaced", "style": $(this).attr("style") }).insertAfter(this);
+                    $(this).hide();
+                });
+
+                $('.ReplaceTextBoxes textarea[disabled]').each(function () {
+                    $("<span />", { html: this.value.replace(/\r?\n/g, '<br/>'), "class": $(this).attr("class") + " wrapspanreplaced", "style": $(this).attr("style") }).insertAfter(this);
+                    //alert(this.value);
+                    $(this).hide();
+                });
+
+                //            $('form').live("submit", function () {
+                //                $(".container-fluid").fadeOut(200);
+                //                $("#loading").show();
+                //            });
+                window.onbeforeunload = function (e) {
+                    if (skipLoader == 0) {
+                        $(".overlayloading").show();
+                    }
+                    else {
+                        skipLoader = 0;
+                    }
+                };
+
+                /*$('input[type="file"]').change(function(e){
+                var fileName = e.target.files[0].name;
+                alert('The file "' + fileName +  '" has been selected.');
+                });*/
+                $('input[type=file]:not(.nodialog)').each(function () {
+                    $(this).change(function (evt) {
+                        if ($(this).val() != "") {
+                            var ext = $(this).val().split('.').pop().toLowerCase();
+                            if (jQuery.inArray(ext, ['pdf', 'jpeg', 'jpg', 'png', 'msg', 'tif', 'docx', 'doc', 'xlsx', 'xls', 'ppt', 'pptx']) == -1) {
+                                alert('File format "' + ext + '" not allowed. Please upload in: pdf, jpeg, jpg, png, msg, tif, docx, doc, xlsx, xls, ppt, pptx');
+                                $(this).val('');
+                            }
+                            if ($(this).val().split('\\').pop().length > 100) {
+                                //alert($(this).val() + " >> " + $(this).val().split('\\').pop() + " >> " + $(this).val().split('\\').pop().length);
+                                alert('Please shorten your file name. Maximum allowed length is 100 letters');
+                                $(this).val('');
+                            }
+                        }
+                    });
+                });
+
+
+            });
+
+
+            var tableToExcel2 = (function () {
+                var uri = 'data:application/vnd.ms-excel;base64,'
+                    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/></head><body><table>{table}</table></body></html>'
+                    , base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
+                    , format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
+                return function (table, name) {
+                    $(".NoExcelExport *").hide();
+                    if (!table.nodeType) table = document.getElementsByClassName(table)[0]
+                    var ctx = { worksheet: name || 'Worksheet', table: table.innerHTML }
+                    document.getElementsByClassName("txtBase64Temp")[0].value = base64(format(template, ctx));
+                    $(".NoExcelExport *").show();
+                    skipLoader = 1;
+                    setTimeout(function () { skipLoader = 0; }, 3000);
+                }
+            })()
+
+        </script>
+
+        <!-- END JAVASCRIPTS -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+<!-- END BODY -->
+</html>
