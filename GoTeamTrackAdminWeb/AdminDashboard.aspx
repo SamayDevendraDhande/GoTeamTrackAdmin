@@ -8,7 +8,7 @@
         <div class="span12">
             <div class="portlet box grey">
                 <div class="portlet-title">
-                    <h3>Dashboard
+                    <h3><asp:Label runat="server" ID="lblTitle"></asp:Label>
                     </h3>
                 </div>
                 <div class="portlet-body">

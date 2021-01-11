@@ -11,6 +11,8 @@ public partial class AdminDashboard : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        lblTitle.Text = "Admin Dashboard";
         DataSet theDataSetOnGoing = new DataSet();
         string pathOnGoing = Server.MapPath("/AllTeams/" + SessionManager.LoggedInTCode + "/TaskOngoing.cs");
         theDataSetOnGoing.ReadXml(pathOnGoing);
